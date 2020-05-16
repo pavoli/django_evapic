@@ -1,9 +1,31 @@
 {% extends 'pic_store/main.html' %}
+{% load static %}
 {% block content %}
 
 
 <br>
 <h1>Pictures</h1>
 
+<!-- Upload form. Note enctype attribute! -->
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.non_field_errors }}</p>
+    <p>
+        {{ form.imagefile.errors }}
+        {{ form.imagefile }}
+    </p>
+    <p><input type="submit" value="Upload" /></p>
+</form>
+
+<!-- List of uploaded documents -->
+{% if documents %}
+    <ul>
+        {% for document in documents %}
+            <li><a href="{{ document.imagefile.url }}">{{ document.imagefile.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No documents.</p>
+{% endif %}
 
 {% endblock %}
