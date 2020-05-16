@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CRM</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    </head>
+    <body>
+        {% include 'pic_store/navbar.html' %}
+        {% block content %}
+
+        {% endblock %}
+        <hr>
+        <h5>Our footer</h5>
+    </body>
+</html>
