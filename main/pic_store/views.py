@@ -10,7 +10,7 @@ def home(request):
 
     }
 
-    return render(request, 'pic_store/main.html', context)
+    return render(request, 'pic_store/home.html', context)
 
 
 def pictures(request):
@@ -29,3 +29,10 @@ def pictures(request):
     }
 
     return render(request, 'pic_store/pictures.html', context)
+
+
+def about(request):
+    context = {
+    }
+
+    return render(request, 'pic_store/about.html', context)
