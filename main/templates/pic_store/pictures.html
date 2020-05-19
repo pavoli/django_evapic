@@ -19,11 +19,21 @@
 
 <!-- List of uploaded documents -->
 {% if documents %}
+    <!--
     <ul>
         {% for document in documents %}
             <li><a href="{{ document.imagefile.url }}">{{ document.imagefile.name }}</a></li>
         {% endfor %}
     </ul>
+    -->
+    {% for document in documents %}
+        <div class="gallery">
+            <a target="_blank" href="{{ document.imagefile.url }}">
+                <img src="{{ document.imagefile.url }}" width="600" height="400">
+            </a>
+        </div>
+    {% endfor %}
+    <br>
 {% else %}
     <p>No documents.</p>
 {% endif %}
